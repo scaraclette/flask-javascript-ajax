@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Necessary for Flask to read an external JS file-->
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+        <title>AJAX Snippets</title>
+    </head>
+
+    <!--Sending data from JavaScript to store in Flask memory, list/array object-->
+    <div>
+        <h2>List Flask Memory</h2>
+        <p>The following stores user input as a list object in Flask and updates the div element via JavaScript. Since it uses Ajax, the page does not need to be refreshed.</p>
+        <form id="formList">
+            <!--Notice that in the following input tag there is no name attribute. Flask will receive the data through FormData in JavaScript.
+            Previously, I kept on getting a None in Flask despite there is a user input.-->
+            <input id="userInput1" placeholder="Add Item" type="text" autocomplete="off">
+            <input type="submit" id="submitInput">
+        </form>
+        <form id="clearList">
+            <input type="submit" value="clear list">
+        </form>
+        <ul id="list1"></ul>
+    </div>
+
+</html>

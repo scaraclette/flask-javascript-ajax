@@ -19,7 +19,10 @@ def call_function():
     input1 = request.form.get("userInput")  
     print(input1)
     if input1 is not None:
-        currentInput = input1
+        currentInput = input1.split()
+        # Since this method does not rely on JavaScript, Python will handle the case of user submitting whitespace
+        if len(currentInput) == 0:
+            currentInput = None
         return render_template("input1.html", message=currentInput)    
 
     # If input1 has no value, renders a page with message

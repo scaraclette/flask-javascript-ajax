@@ -18,11 +18,11 @@ def dict_memory():
 
     # Data received: channelInput, channelItem
     channelInput = request.form.get('channelInput')
-    print("channel input: ", channelInput)
     channelItem = request.form.get('channelItem')
-    print("channel item: ", channelItem)
 
     if (channelInput is not None and channelItem is not None):
+        channelInput = channelInput.strip()
+        channelItem = channelItem.strip()
         # Channel already exists
         if channelInput in channels:
             channels[channelInput].append(channelItem)
@@ -31,9 +31,6 @@ def dict_memory():
             # Channel name needs to be added in value for chn since it's the way for JavaScript to dynamically show the channel names
             channels["chn"].append(channelInput)
             print("CHANNEL ADDED")
-
-    # Check if it's updated
-    print("CHANNELS", channels)
     
     return jsonify(channels)
     
