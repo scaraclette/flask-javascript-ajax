@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Necessary for Flask to read an external JS file-->
+        <title>Input1 Page</title>
+    </head>
+
+    <!--Calling a function in Flask through HTML page-->
+    <div>
+        <h2>User input: {{message}}</h2>
+        <form action="{{ url_for('index') }}">
+            <input type="submit" value="back">
+        </form>
+        
+    </div>
+</html>

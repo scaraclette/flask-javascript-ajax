@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Necessary for Flask to read an external JS file-->
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+        <title>AJAX Snippets</title>
+    </head>
+
+    <!--Calling a function in Flask through HTML page-->
+    <div>
+        <h2>Call Flask Function</h2>
+        <p>The following is a form that calls a Flask function which renders a page of the user input. Before learning Ajax and incorporating JavaScript, my method of creating a Flask application relied on constantly rendering different pages. No JavaScript included.</p>
+        <!--Make sure that the url_for calls the FUNCTION NAME in flask and not the url-->
+        <form action="{{ url_for('call_function') }}" method="post">
+            <!--For the following input tag, I purposely did not include an id attribute to show what speficic attributes are needed for different function calls-->
+            <input name="userInput" autocomplete="off" placeholder="input text" type="text">
+            <input type="submit">
+        </form>
+        <form action="{{ url_for('call_function') }}" method="get">
+            <input type="submit" value="see current value">
+        </form>
+    </div>
+
+
+</html>
