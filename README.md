@@ -1,6 +1,21 @@
 # Flask-JavaScript-Ajax
-<h1>What this project is used for</h1>
-<p>multi page to single page is hard. learn ajax first, know how to do it</p>
+## Background
+<p>This project is a three code compilation of using Ajax requests through a Flask application and JavaScript. I did this project to teach myself the basics of sending XMLHTTP requests through client and server. By mastering the basics of Ajax, it will be easier to create single-page web applications. This repo will also be useful for those who are starting to learn Ajax requests and wanting to create a dynamic page from JavaScript</p>
+
+## Required
+Python3 & Flask
+
+## Installing
+On working directory
+```
+$ export FLASK_APP=application.py
+$ export FLASK_ENV=development
+$ flask run
+```
+
+## Other notes
+The main directory includes the whole compilation, but I also separated each code to individual forlders for further clarity.
+
 
 <!--
     TODO: write about

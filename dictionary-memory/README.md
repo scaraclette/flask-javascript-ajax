@@ -1,0 +1,2 @@
+# Dictionary
+This snippet accepts user input to create a list of channels and items that is dynamically updated through JavaScript. An exmaple use of this would be creating a checklist of different items. 'Channel 1' and 'Channel 2' are the items initially stored with the start of the server.
