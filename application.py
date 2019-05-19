@@ -4,7 +4,7 @@ from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 
 # Variables stored in Flask memory
-currentInput = None
+currentInput = ""
 listMemory = ["this is an initial item stored in the flask memory"]
 channels = {"chn":["channel 1", "channel 2"],"channel 1":["item 1", "item 2"], "channel 2":["item a", "item b"]}
 
@@ -27,11 +27,11 @@ def call_function():
         currentInput = input1.split()
         # Since this method does not rely on JavaScript, Python will handle the case of user submitting whitespace
         if len(currentInput) == 0:
-            currentInput = None
-        return render_template("input1.html", message=currentInput)    
+            currentInput = "no input submitted"
+        return render_template("input1.html", message=currentInput) 
 
     # If input1 has no value, renders a page with message
-    return render_template("input1.html", message=currentInput)
+    return render_template("input1.html", message="no input submitted")
 
 
 # **************************** LIST FLASK MEMORY ************************************
